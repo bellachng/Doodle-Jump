@@ -1,2 +1,2 @@
 # Doodle-Jump
- Doodle Jump simulator using python
+ Doodle Jump simulator using pygame
