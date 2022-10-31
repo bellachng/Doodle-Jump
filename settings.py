@@ -1,4 +1,4 @@
-# Base Template - Game options/Settings
+# Game options/Settings
 
 TITLE = "Doodle Jump"
 WIDTH = 480             # width of game window
