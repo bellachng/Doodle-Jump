@@ -1,5 +1,3 @@
-# Base Template for Main Class
-
 import pygame as pg
 import random
 from settings import *
@@ -47,12 +45,12 @@ class Game:
         self.powerups = pg.sprite.Group()
         self.mobs = pg.sprite.Group()
         self.player = Player(self)          # Add Player
-        for plat in PLATFORM_LIST:      # Loop through platform list
-            Platform(self, *plat)         # Where *plat splits it into its 4 componetns of plat[0], plat[1], plat[2], plat[3]
+        for plat in PLATFORM_LIST:          # Loop through platform list
+            Platform(self, *plat)           # Where *plat splits it into its 4 componetns of plat[0], plat[1], plat[2], plat[3]
         self.mob_timer = 0
         pg.mixer.music.load(path.join(self.snd_dir, 'happytune.ogg'))
         pg.mixer.music.set_volume(VOLUME)
-        self.run()                      # Whenever new game starts, run it
+        self.run()                          # Whenever new game starts, run it
 
     def run(self):
         # Game Loop
@@ -60,7 +58,7 @@ class Game:
         pg.mixer.music.set_volume(VOLUME)
         self.playing = True
         while self.playing:
-            self.clock.tick(FPS)        # keep loop running at the right speed
+            self.clock.tick(FPS)            # keep loop running at the right speed
             self.events()
             self.update()
             self.draw()
@@ -90,10 +88,10 @@ class Game:
                     if hit.rect.bottom > lowest.rect.bottom:
                         lowest = hit
                 if self.player.pos.x < lowest.rect.right + 10 and self.player.pos.x > lowest.rect.left - 10:
-                    if self.player.pos.y < hits[0].rect.centery:     # Only snap to platform is feet hits the center of platform
-                        self.player.pos.y = hits[0].rect.top    # Detect hitting a platform
-                        self.player.vel.y = 0                   # Don't fall through platform
-                        self.player.jumping = False            # Set back to false
+                    if self.player.pos.y < hits[0].rect.centery:    # Only snap to platform is feet hits the center of platform
+                        self.player.pos.y = hits[0].rect.top        # Detect hitting a platform
+                        self.player.vel.y = 0                       # Don't fall through platform
+                        self.player.jumping = False                 # Set back to false
         
         # Check if player reaches top 1/4 of the screen
         if self.player.rect.top <= HEIGHT / 4:
