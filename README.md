@@ -1,2 +1,2 @@
 # Doodle-Jump
- Doodle Jump simulator using Pygame
+[PYTHON] Doodle Jump simulator using PyGame library. Utilizes arrow key inputs, sprite images, and audio. Tracks and saves high scores.
